@@ -1,5 +1,35 @@
-# Vue 3 + Vite
+# 介绍
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+使用 WebAPI 录音/录屏 demo, 也可以用来测试电脑的硬件(比如电流麦)
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+```txt
+.
+├── README.md
+├── dprint.json
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── postcss.config.js
+├── public
+│   └── vite.svg
+├── src
+│   ├── App.vue
+│   ├── camera.js         # 拍照实现
+│   ├── main.js
+│   ├── recorder.js       # 录音/录屏实现
+│   ├── style.css
+│   └── take-phoeo.vue
+├── tailwind.config.js    # tailwind 配置文件
+└── vite.config.js
+
+3 directories, 15 files
+```
+
+## 拍照
+
+使用 原生js实现
+
+## 录麦克风/录摄像头/录显示器
+
+使用 [recordrtc](https://github.com/muaz-khan/RecordRTC) 实现
+
