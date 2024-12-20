@@ -33,11 +33,10 @@ jobs:
           version: 8
           run_install: false
 
-      - name: Install dependencies
-        run: pnpm install
-
       - name: Build
         run: |
+          cd media-devices-demo
+          pnpm install
           pnpm build # npm run build / pnpm build / yarn build / bun run build
           touch ./dist/.nojekyll
 
