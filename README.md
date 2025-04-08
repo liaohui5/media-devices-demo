@@ -5,31 +5,36 @@
 ```txt
 .
 ├── README.md
-├── dprint.json
 ├── index.html
 ├── package.json
 ├── pnpm-lock.yaml
-├── postcss.config.js
+├── node_modules
 ├── public
 │   └── vite.svg
 ├── src
 │   ├── App.vue
-│   ├── camera.js         # 拍照实现
-│   ├── main.js
-│   ├── recorder.js       # 录音/录屏实现
+│   ├── AudioRecorder.vue
+│   ├── CameraRecorder.vue
+│   ├── ScreenRecorder.vue
+│   ├── TakePhoto.vue
+│   ├── main.ts
+│   ├── recorder
+│   │   ├── AudioRecorder.ts
+│   │   ├── BaseRecorder.ts
+│   │   ├── Camera.ts
+│   │   ├── VideoRecorder.ts
+│   │   ├── index.ts
+│   │   └── tools.ts
 │   ├── style.css
-│   └── take-phoeo.vue
-├── tailwind.config.js    # tailwind 配置文件
-└── vite.config.js
+│   └── vite-env.d.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 
-3 directories, 15 files
+4 directories, 23 files
 ```
 
-## 拍照
-
-使用 原生js实现
-
-## 录麦克风/录摄像头/录显示器
+## 录麦克风/录摄像头/拍照/录显示器
 
 使用 [recordrtc](https://github.com/muaz-khan/RecordRTC) 实现
-
