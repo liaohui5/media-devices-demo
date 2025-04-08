@@ -5,7 +5,8 @@
       <button class="px-4 py-2 mr-2 bg-blue-500 text-white" @click="stopScreenRecorder">结束录屏</button>
     </div>
     <div class="flex items-center">
-      <video ref="screenPreviewRef" class="w-1/2 bg-black"></video>
+      <!-- 注意镜像效果 scale-x-[-1] -->
+      <video ref="screenPreviewRef" class="w-1/2 bg-black scale-x-[-1]"></video>
       <video ref="screeeResultRef" class="w-1/2" controls="true"></video>
     </div>
   </div>
@@ -31,7 +32,7 @@ async function startScreenRecorder() {
 
 async function stopScreenRecorder() {
   const blob = await screenRecorder!.stop();
-  const url  = URL.createObjectURL(blob!);
+  const url = URL.createObjectURL(blob!);
   screeeResultRef.value.src = url;
   console.log("stopScreenRecorder blob", blob);
 }

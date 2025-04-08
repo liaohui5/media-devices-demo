@@ -5,7 +5,8 @@
       <button class="px-4 py-2 mr-2 bg-blue-500 text-white" @click="stopCameraRecorder">结束录摄像头</button>
     </div>
     <div class="flex items-center">
-      <video ref="cameraPreviewRef" class="w-1/2 bg-black"></video>
+      <!-- 注意镜像效果 scale-x-[-1] -->
+      <video ref="cameraPreviewRef" class="w-1/2 bg-black scale-x-[-1]"></video>
       <video ref="cameraResultRef" class="w-1/2" controls="true"></video>
     </div>
   </div>

@@ -6,7 +6,8 @@
     </div>
 
     <div class="flex">
-      <video ref="videoRef" class="w-[480px] h-[640px] border"></video>
+      <!-- 注意镜像效果 scale-x-[-1] -->
+      <video ref="videoRef" class="w-[480px] h-[640px] border scale-x-[-1]"></video>
       <img v-show="imageUrl" :src="imageUrl" class="ml-4 object-cover border" />
     </div>
   </div>
