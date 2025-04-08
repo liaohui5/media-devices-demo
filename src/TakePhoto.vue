@@ -8,7 +8,7 @@
     <div class="flex">
       <!-- 注意镜像效果 scale-x-[-1] -->
       <video ref="previewDomRef" class="w-[480px] h-[640px] border scale-x-[-1]"></video>
-      <img ref="resultDomRef" class="ml-4 object-cover border" />
+      <img ref="resultDomRef" class="ml-4 object-cover border scale-x-[-1]" />
     </div>
   </div>
 </template>

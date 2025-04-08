@@ -7,7 +7,7 @@
     <div class="flex items-center">
       <!-- 注意镜像效果 scale-x-[-1] -->
       <video ref="previewDomRef" class="w-1/2 bg-black scale-x-[-1]"></video>
-      <video ref="resultDomRef" class="w-1/2" controls="true"></video>
+      <video ref="resultDomRef" class="w-1/2 scale-x-[-1]" controls="true"></video>
     </div>
   </div>
 </template>
