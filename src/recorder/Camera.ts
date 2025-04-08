@@ -1,4 +1,3 @@
-import { extend } from "./tools";
 import { VideoRecorderAbstruct } from "./VideoRecorder";
 
 export interface TakePhotoOptions {
@@ -38,7 +37,7 @@ export class Camera extends VideoRecorderAbstruct {
       autoPauseVideo: true,
     };
 
-    const options = extend(defaultOpts, opts);
+    const options = Object.assign(defaultOpts, opts);
     if (options.quality < 0 || options.quality > 1) {
       throw new RangeError("quality value must be between 0 and 1");
     }

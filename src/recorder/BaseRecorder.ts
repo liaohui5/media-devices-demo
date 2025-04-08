@@ -1,5 +1,4 @@
 import { RecordRTCPromisesHandler, type Options } from "recordrtc";
-import { extend } from "./tools";
 
 export abstract class BaseRecorder {
   stream?: MediaStream;
@@ -13,7 +12,7 @@ export abstract class BaseRecorder {
     const defaultOptions: Options = {
       disableLogs: true,
     };
-    this.options = extend(defaultOptions, options);
+    this.options = Object.assign(defaultOptions, options);
   }
 
   async initRecorder(options?: Options): Promise<void> {

@@ -7,32 +7,23 @@
 
     <div class="flex">
       <!-- 注意镜像效果 scale-x-[-1] -->
-      <video ref="videoRef" class="w-[480px] h-[640px] border scale-x-[-1]"></video>
-      <img v-show="imageUrl" :src="imageUrl" class="ml-4 object-cover border" />
+      <video ref="previewDomRef" class="w-[480px] h-[640px] border scale-x-[-1]"></video>
+      <img ref="resultDomRef" class="ml-4 object-cover border" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
-import { Camera, createCamera } from "./recorder";
+import { useCameraTakePhoto } from "./recorder";
 
-const videoRef = ref();
-const imageUrl = ref("");
-
-let camera: null | Camera = null;
-onMounted(() => {
-  camera = createCamera();
-});
+const { start, stop, previewDomRef, resultDomRef, resultBlob } = useCameraTakePhoto();
 
 async function takePhoto() {
-  camera!.start();
-  camera!.initVideoElement(videoRef.value);
+  await start();
 }
 
 async function stopCamera() {
-  const blob = await camera!.stop();
-  const url = URL.createObjectURL(blob!);
-  imageUrl.value = url;
+  await stop();
+  console.log("resultBlob:", resultBlob);
 }
 </script>

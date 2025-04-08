@@ -7,32 +7,28 @@
     </div>
     <div class="flex items-center">
       <div class="w-1/2">{{ audioMsg }}</div>
-      <audio class="w-1/2" ref="audioRef" controls="true"></audio>
+      <audio class="w-1/2" ref="resultDomRef" controls="true"></audio>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from "vue";
-import { createAudioRecorder, AudioRecorder } from "./recorder";
+import { ref } from "vue";
+import { useAudioRecorder } from "./recorder";
 
 // 录麦克风
-const audioRef = ref();
 const audioMsg = ref("麦克风未启动");
 
-let audioRecorder: AudioRecorder | null = null;
-onMounted(() => {
-  audioRecorder = createAudioRecorder();
-});
+const { start, stop, resultBlob, resultDomRef } = useAudioRecorder();
+
 async function startAudioRecorder() {
-  await audioRecorder!.start();
+  await start();
   audioMsg.value = "请说话...";
 }
+
 async function stopAudioRecorder() {
-  const blob = await audioRecorder!.stop();
-  const url  = URL.createObjectURL(blob!);
-  audioMsg.value = "录音已结束";
-  audioRef.value.src = url;
-  console.log("audio-result", { url, blob });
+  await stop();
+  audioMsg.value = "录音已结束, 请点击开始录音";
+  console.log("resultBlob:", resultBlob);
 }
 </script>

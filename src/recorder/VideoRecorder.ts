@@ -7,6 +7,7 @@ export abstract class VideoRecorderAbstruct extends BaseRecorder {
   constructor() {
     super({
       type: "video",
+      mimeType: "video/mp4",
       recorderType: MediaStreamRecorder,
     });
   }
