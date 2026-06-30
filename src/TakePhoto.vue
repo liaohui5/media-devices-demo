@@ -1,14 +1,30 @@
 <template>
-  <div class="border-b pb-10">
-    <div class="py-4">
-      <button class="px-4 py-2 mr-2 bg-blue-500 text-white" @click="takePhoto">开始拍照</button>
-      <button class="px-4 py-2 mr-2 bg-blue-500 text-white" @click="stopCamera">结束拍照</button>
+  <div class="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+    <div class="flex items-center gap-2">
+      <button
+        class="rounded-lg bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-green-600 active:bg-green-700 active:scale-[0.97]"
+        @click="takePhoto"
+      >
+        开始拍照
+      </button>
+      <button
+        class="rounded-lg bg-red-500 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-red-600 active:bg-red-700 active:scale-[0.97]"
+        @click="stopCamera"
+      >
+        结束拍照
+      </button>
     </div>
 
-    <div class="flex">
+    <div class="mt-4 flex gap-4">
       <!-- 注意镜像效果 scale-x-[-1] -->
-      <video ref="previewDomRef" class="w-[480px] h-[640px] border scale-x-[-1]"></video>
-      <img ref="resultDomRef" class="ml-4 object-cover border scale-x-[-1]" />
+      <video
+        ref="previewDomRef"
+        class="w-[480px] h-[640px] rounded-lg border border-gray-200 bg-black shadow-md scale-x-[-1]"
+      ></video>
+      <img
+        ref="resultDomRef"
+        class="flex-1 rounded-lg border border-gray-200 bg-gray-100 object-cover shadow-md scale-x-[-1]"
+      />
     </div>
   </div>
 </template>

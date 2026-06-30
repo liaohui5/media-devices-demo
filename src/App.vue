@@ -1,23 +1,27 @@
 <template>
-  <div class="container mx-auto overflow-x-auto">
-    <div class="py-10">
-      <h2 class="text-center text-lg">使用 navigator.mediaDevices WebAPI 录麦克风/录摄像头/录屏</h2>
-      <p class="text-sm text-center">
+  <div class="container mx-auto max-w-5xl px-4 pb-12">
+    <div class="py-12 text-center">
+      <h1 class="text-2xl font-bold text-gray-800 tracking-tight">
+        使用 navigator.mediaDevices WebAPI 录麦克风/录摄像头/录屏
+      </h1>
+      <p class="mt-2 text-sm text-gray-500">
         也可以用于测试电脑麦克风/摄像头硬件是否正常,有的时候可能会有电流麦,摄像头模糊等问题
       </p>
     </div>
 
-    <!-- mircophone -->
-    <AudioRecorder />
+    <div class="space-y-6">
+      <!-- mircophone -->
+      <AudioRecorder />
 
-    <!-- take-phoeo -->
-    <TakePhoto />
+      <!-- take-phoeo -->
+      <TakePhoto />
 
-    <!-- camera -->
-    <CameraRecorder />
+      <!-- camera -->
+      <CameraRecorder />
 
-    <!-- screen -->
-    <ScreenRecorder />
+      <!-- screen -->
+      <ScreenRecorder />
+    </div>
   </div>
 </template>
 

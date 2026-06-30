@@ -1,12 +1,22 @@
 <template>
-  <div class="border-b pb-10">
-    <div class="py-4">
-      <button class="px-4 py-2 mr-2 bg-blue-500 text-white" @click="handleStart">开始录摄像头</button>
-      <button class="px-4 py-2 mr-2 bg-blue-500 text-white" @click="handleStop">结束录摄像头</button>
+  <div class="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+    <div class="flex items-center gap-2">
+      <button
+        class="rounded-lg bg-green-500 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-green-600 active:bg-green-700 active:scale-[0.97]"
+        @click="handleStart"
+      >
+        开始录摄像头
+      </button>
+      <button
+        class="rounded-lg bg-red-500 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-red-600 active:bg-red-700 active:scale-[0.97]"
+        @click="handleStop"
+      >
+        结束录摄像头
+      </button>
     </div>
-    <div class="flex items-center">
-      <video ref="previewDomRef" class="w-1/2 bg-black"></video>
-      <video ref="resultDomRef" class="w-1/2" controls="true"></video>
+    <div class="mt-4 flex items-center gap-4">
+      <video ref="previewDomRef" class="w-1/2 rounded-lg bg-black shadow-md"></video>
+      <video ref="resultDomRef" class="w-1/2 rounded-lg shadow-md" controls="true"></video>
     </div>
   </div>
 </template>
